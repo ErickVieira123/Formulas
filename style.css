@@ -1,0 +1,114 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+body {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-family: "Poppins", sans-serif;
+
+  background: linear-gradient(to right, #667db6, #0082c8, #0082c8, #667db6);
+}
+
+h1 {
+  color: white;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.box {
+  width: 70%;
+  height: 60%;
+  border-radius: 10px;
+  background: linear-gradient(to right, #38ef7d, #11998e);
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.box img {
+    width: 42%;
+}
+
+.parent {
+  display: grid;
+  height: 100%;
+  width: 100%;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap: 21px;
+}
+
+.parent div {
+  background-color: rgba(255, 255, 255, 0.2);
+  border: 2px solid white;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  color: white;
+  transition: 0.2s;
+}
+
+.parent div img {
+  width: 30%;
+}
+
+.parent div:hover {
+  background-color: rgba(255, 255, 255, 0.4);
+  cursor: pointer;
+}
+
+.div1 {
+  grid-area: 1 / 1 / 2 / 2;
+}
+.div2 {
+  grid-area: 1 / 2 / 2 / 3;
+}
+.div3 {
+  grid-area: 2 / 1 / 3 / 2;
+}
+.div4 {
+  grid-area: 2 / 2 / 3 / 3;
+}
+
+.box input {
+    width: 9%;
+}
+
+.numbers {
+    display: flex;
+    font-size: 18px;
+}
+
+.left {
+    display: flex;
+    flex-direction: column;
+    left: 50%;
+}
+
+/* Media Query para Celulares e Tablets */
+@media (max-width: 768px) {
+  .box {
+    width: 95%;           /* Aumenta a largura para ocupar quase toda a tela */
+    height: auto;         /* Permite que a caixa cresça verticalmente */
+    padding: 15px;
+  }
+
+  .parent {
+    grid-template-columns: 1fr; /* Muda de 2 colunas para apenas 1 */
+    grid-template-rows: auto;    /* Ajusta as linhas conforme o conteúdo */
+    gap: 15px;
+  }
+
+  /* Removemos as posições fixas do grid para que fiquem um embaixo do outro */
+  .div1, .div2, .div3, .div4 {
+    grid-area: auto; 
+    padding: 20px;
+  }
+
+  .parent div img {
+    width: 20%; /* Ajusta o tamanho da imagem no modo lista */
+  }
+}
