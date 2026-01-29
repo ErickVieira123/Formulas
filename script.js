@@ -19,16 +19,32 @@ function calcular() {
 
   document.getElementById("xi").innerText = "X¹ = " + x1;
   document.getElementById("xii").innerText = "X² = " + x2;
+
+  if (a === "" || b === "" || c === "") {
+    alert("Por favor, preencha todos os campos.");
+    return;
+  }
 }
 
 const btn = document.querySelector(".btn");
 if (btn) {
-    btn.addEventListener("click", calcular); 
+  btn.addEventListener("click", calcular);
 }
 
 const voltar = document.getElementById("voltar");
 if (voltar) {
-    voltar.addEventListener("click", function() {
-        window.location.href = "index.html";
-    });
+  voltar.addEventListener("click", function () {
+    window.location.href = "index.html";
+  });
+}
+
+const limpar = document.querySelector(".limpar");
+if (limpar) {
+  limpar.addEventListener("click", function () {
+    document.getElementById("a").value = "";
+    document.getElementById("b").value = "";
+    document.getElementById("c").value = "";
+    document.getElementById("xi").innerText = "X¹ = X";
+    document.getElementById("xii").innerText = "X² = X";
+  });
 }
